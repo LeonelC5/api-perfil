@@ -1,6 +1,5 @@
-FROM python:3-slim
+FROM python:3.8
 WORKDIR /programas/api-user
-COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install Flask flask_cors mysql-connector-python
 COPY . .
-CMD [ "python3", "api-user.py" ]
+CMD ["python", "./api-user.py"]
